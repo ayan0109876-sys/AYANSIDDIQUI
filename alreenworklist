@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workers List</title>
+<style>
+body{margin:0;font-family:Arial;background:#f2f2f2}
+.header{background:#000;color:#fff;padding:20px;text-align:center}
+.search{padding:15px;text-align:center}
+.search input{width:90%;max-width:400px;padding:12px;border-radius:25px;border:1px solid #ccc}
+.list{max-width:500px;margin:auto;padding:10px}
+.card{background:#fff;padding:15px 20px;border-radius:12px;margin-bottom:10px;display:flex;justify-content:space-between}
+.name{font-weight:bold}.place{background:#eee;padding:5px 12px;border-radius:20px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="header"><h3>AYAN SIDDIQUI - STAFF</h3></div>
+<div class="search"><input id="myInput" onkeyup="myFunction()" placeholder="Naam search karo..."></div>
+<div class="list" id="myList">
+<div class="card"><span class="name">Ayan Siddiqui</span><span class="place">Office - Dhruma</span></div>
+<div class="card"><span class="name">Worker 1</span><span class="place">Pump 1</span></div>
+<div class="card"><span class="name">Worker 2</span><span class="place">Pump 2</span></div>
+</div>
+<script>
+function myFunction(){
+var input=document.getElementById("myInput").value.toUpperCase();
+var cards=document.getElementById("myList").getElementsByClassName("card");
+for(var i=0;i<cards.length;i++){
+var name=cards[i].getElementsByClassName("name")[0].innerText.toUpperCase();
+cards[i].style.display=name.indexOf(input)>-1?"":"none";
+}}
+</script>
+</body>
+</html>
